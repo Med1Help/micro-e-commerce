@@ -32,38 +32,66 @@
 		<mapstruct.version>1.5.3.Final</mapstruct.version>
 	</properties>
 	<dependencies>
+		<!-- Starter for MongoDB, includes Spring Data MongoDB support -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
+
+		<!-- Starter for bean validation using JSR-380 (e.g., @Valid, @NotNull) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
+
+		<!-- Starter for building web applications, includes Spring MVC and embedded Tomcat -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<!-- Spring Cloud Config Starter for externalized configuration management -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
+
+		<!-- Netflix Eureka Client for service discovery in a microservices architecture -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
+		<!-- Lombok library for reducing boilerplate code (e.g., getters, setters, constructors) -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<optional>true</optional> <!-- Optional because it's only needed during development -->
 		</dependency>
+
+		<!-- Starter for testing Spring applications, includes JUnit, Hamcrest, and Mockito -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<scope>test</scope> <!-- Test scope, only used during testing -->
+		</dependency>
+
+		<!-- MapStruct runtime dependency for mapping between DTOs and entities -->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${mapstruct.version}</version>
+		</dependency>
+
+		<!-- MapStruct annotation processor for generating mapper implementations at compile time -->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>${mapstruct.version}</version>
+			<scope>provided</scope> <!-- Provided scope because it is only needed during compile time -->
 		</dependency>
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -72,11 +100,6 @@
 				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.mapstruct</groupId>
-				<artifactId>mapstruct-processor</artifactId>
-				<version>${mapstruct.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
