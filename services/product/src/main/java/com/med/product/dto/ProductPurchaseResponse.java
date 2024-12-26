@@ -1,4 +1,16 @@
 package com.med.product.dto;
+import java.math.BigDecimal;
 
-public class ProductPurchaseResponse {
+public record ProductPurchaseResponse (
+
+        Integer productId,
+
+        String name,
+
+        String description,
+
+        BigDecimal price,
+
+        double quantity
+) {
 }
