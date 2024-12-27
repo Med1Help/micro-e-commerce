@@ -3,8 +3,6 @@ package com.med.customer.controllers;
 import com.med.customer.records.CustomerRequest;
 import com.med.customer.services.CustomerService;
 import jakarta.validation.Valid;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

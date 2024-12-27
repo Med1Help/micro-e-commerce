@@ -1,0 +1,20 @@
+server:
+  port: 8070
+spring:
+  application:
+    config:
+      customer-url: http://localhost:8222/api/v1/customer
+      product-url: http://localhost:8222/api/v1/product
+      payment-url: http://localhost:8222/api/v1/payment
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/order_database
+    username: med
+    password: med@micro
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
