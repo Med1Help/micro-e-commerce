@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.med</groupId>
-	<artifactId>customer</artifactId>
+	<artifactId>product-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>customer</name>
-	<description>customer</description>
+	<name>product-service</name>
+	<description>product</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -33,34 +33,39 @@
 		<lombok.version>1.18.26</lombok.version>
 	</properties>
 	<dependencies>
-		<!-- Starter for MongoDB, includes Spring Data MongoDB support -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
-		<!-- Starter for bean validation using JSR-380 (e.g., @Valid, @NotNull) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
-
-		<!-- Starter for building web applications, includes Spring MVC and embedded Tomcat -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
-		<!-- Spring Cloud Config Starter for externalized configuration management -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-database-postgresql</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
-
-		<!-- Netflix Eureka Client for service discovery in a microservices architecture -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 		<!-- Lombok library for reducing boilerplate code (e.g., getters, setters, constructors) -->
@@ -70,11 +75,10 @@
 			<version>${lombok.version}</version>
 		</dependency>
 
-		<!-- Starter for testing Spring applications, includes JUnit, Hamcrest, and Mockito -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope> <!-- Test scope, only used during testing -->
+			<scope>test</scope>
 		</dependency>
 
 		<!-- MapStruct runtime dependency for mapping between DTOs and entities -->
@@ -91,8 +95,12 @@
 			<version>${mapstruct.version}</version>
 			<scope>provided</scope> <!-- Provided scope because it is only needed during compile time -->
 		</dependency>
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.6.4.Final</version>
+        </dependency>
 	</dependencies>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
