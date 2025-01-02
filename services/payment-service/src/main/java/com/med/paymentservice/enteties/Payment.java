@@ -1,5 +1,6 @@
-package com.med.paymentservice.enteties.payment_method;
+package com.med.paymentservice.enteties;
 
+import com.med.paymentservice.enteties.payment_method.PaymentMethod;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

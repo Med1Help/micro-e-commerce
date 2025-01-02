@@ -1,7 +1,7 @@
 package com.med.paymentservice.dtos.mappers;
 
 import com.med.paymentservice.dtos.PaymentRequest;
-import com.med.paymentservice.enteties.payment_method.Payment;
+import com.med.paymentservice.enteties.Payment;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
